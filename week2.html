@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>IDC6940_SSY</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="week2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="week2_files/libs/quarto-html/quarto.js"></script>
+<script src="week2_files/libs/quarto-html/popper.min.js"></script>
+<script src="week2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="week2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="week2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="week2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="week2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="week2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="week2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">IDC6940_SSY</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="literature-review" class="level2">
+<h2 class="anchored" data-anchor-id="literature-review">Literature Review</h2>
+<p>Background/Motivation Context in Which the Research Was Conducted: The use of machine learning (ML) to conceptual modeling (CM), a critical component of software and systems engineering, is the main emphasis of this work. Conceptual models are used to graphically depict domain-specific knowledge, such as system designs or business procedures. Combining ML and CM, or ML4CM, (Ali, Gavric, Proper, &amp; Bork, 2023) has garnered attention recently as a way to automate processes such as finishing incomplete models, classifying them, or converting them into different formats. We must express these models’ structure (the relationships between elements) and meaning (the semantics) in a fashion that machine learning algorithms can understand if we want ML to function effectively with them.</p>
+<p>Problem or Gap in the Existing Literature: The lack of a standard method for encoding conceptual models for machine learning tasks is a significant issue. The majority of current research employs techniques that are limited to addressing a single issue, making them challenging to generalize to other contexts. Structural encodings, which take into consideration the linkages and connections in models, are frequently disregarded in favor of semantic encodings, such as the usage of text labels. Furthermore, not many methods include data from ontologies or metamodels, which could offer more context and more accurately depict the connections between model components. These shortcomings hinder machine learning’s ability to properly utilize conceptual models for increasingly intricate and varied tasks.</p>
+<p>Significance of the Research Question Improving ML’s Ability to Learn from Models: The amount of valuable information available to machine learning algorithms during training depends on how conceptual models are encoded. ML finds it difficult to identify patterns or provide precise predictions in the absence of rich and meaningful encodings. The goal of this project is to enhance the way machine learning (ML) works with conceptual models by examining various encoding techniques, which will increase the efficiency of tasks like transformation and classification (Ali, Gavric, Proper, &amp; Bork, 2023). Providing Practical Guidance: The purpose of this study is to assist developers and researchers in determining which encoding techniques are most effective for various ML tasks in CM. The field will advance more quickly as a result of this clarity, which will make it simpler for others to create and use superior solutions.</p>
+<p>Meeting Industry Needs: Automating processes like model transformation and classification is becoming more and more crucial as model-driven engineering is used in more sectors. Businesses can save time, cut down on errors, and enhance the overall quality of their systems by encoding conceptual models in a methodical manner.</p>
+<p>Summary of Methods Used</p>
+<p>In order to investigate how conceptual models are encoded for machine learning (ML) applications, the authors carried out a Systematic Literature Review (SLR). Several crucial steps were engaged in their process:</p>
+<p>Establishing the Research Focus: The study sought to investigate:</p>
+<p>the kinds of data from conceptual models that are utilized in machine learning training. strategies for encoding this data. How encodings fit into particular modeling languages and machine learning tasks. the connection between encodings and machine learning models.</p>
+<p>Search and Selection: A comprehensive search using a predefined query initially identified 647 papers. After applying rigorous selection criteria—such as excluding studies not focused on encoding conceptual models for machine learning—37 papers were ultimately selected. Categorization and Analysis: Every chosen paper was categorized according to: 1) The kind of data that is encoded (structural or semantic, for example). 2) Encoding methods such as graph kernels, TF-IDF, and bare graphs. 3) The ML application’s goal (e.g., transformation, categorization, or completion). 4) The kind of machine learning models used. Data Review: The study explored how different machine learning tasks are handled by comparing explicit and implicit encoding techniques. It also examined the connections between machine learning models, their goals, and the methods used for encoding, shedding light on how these components interact in practice.</p>
+<p>Suitability of the Methods: The authors’ decision to use a systematic literature review (SLR) was a perfect match for their research goals. This method allowed them to dive deeply into existing studies, uncover trends, organize methods, and identify gaps in how machine learning is applied to conceptual modeling. The step-by-step approach ensured their findings were thorough and dependable.</p>
+<p>What stood out most about their approach was:</p>
+<p>Capturing diversity: They examined a wide range of encoding methods, from straightforward metrics to complex graph-based representations. Task-specific insights: By connecting encoding techniques to specific machine learning tasks, the study offered valuable, practical guidance for future research and applications.</p>
+<p>Noteworthy Contributions and Innovations: The study made several important contributions to the field. One of the key achievements was creating a simple and clear system to classify encoding methods and their use cases. This framework helps bring order and understanding to what can be a very complicated area of research (Ali, Gavric, Proper, &amp; Bork, 2023). The authors also focused on practical applications by showing how specific encoding methods work well for certain machine learning tasks. For example, they explained how raw graphs are a good fit for graph neural networks in tasks like model completion. This makes their findings useful and directly applicable to real-world problems. Another highlight was their focus on areas that are often overlooked. They pointed out that concepts like metamodels and ontological semantics are rarely used in current approaches. By bringing attention to this, the study encourages future research to explore these ideas and improve how models are encoded. Lastly, the study identified several gaps in the field, such as the lack of standardized datasets and the limited use of advanced methods like graph kernels. These insights provide a clear direction for future studies to address these challenges and move the field forward.</p>
+<p>Significance of the Work Key Findings and Contributions: The study breaks down different ways of encoding conceptual models into simple categories. It looks at semantic methods like TF-IDF and word embeddings and structural ones like raw graphs.</p>
+<p>One key takeaway is that the type of encoding you use really depends on the task. For instance, raw graphs work well with graph neural networks for things like model completion. It shows how important it is to match the method to the job.</p>
+<p>The research also points out some gaps, like not having enough standardized datasets to compare results or fully exploring metamodel and ontological semantics. These are exciting areas where future research can make a big impact.</p>
+<p>Lastly, the authors put together a practical framework that connects encoding methods to specific ML tasks. It’s a handy guide for anyone working in this area to pick the right approach for what they’re trying to do.</p>
+<p>Importance in the Field: This study addresses a crucial gap in understanding how machine learning can be applied to conceptual modeling. By organizing and clarifying different encoding approaches, it lays the groundwork for creating more effective and tailored ML solutions that fit specific tasks.</p>
+<p>Implications for Future Research and Practice:</p>
+<p>Shared Datasets: Creating shared datasets for machine learning in conceptual modeling would make it easier for researchers to compare results and reproduce studies.<br>
+More Context in Encodings: Using metamodel and ontological semantics could make encodings more detailed and meaningful.<br>
+New Applications: The study’s insights could lead to new uses for machine learning in conceptual modeling, like building better tools to check or fix models.</p>
+<p>Connection to Other Work: This paper is part of the growing research on how machine learning (ML) and conceptual modeling (CM) come together. It builds on earlier work by breaking down encoding methods and showing how they’re used in different ML tasks—a level of detail that hasn’t really been done in a systematic way before.</p>
+<p>Building on Previous Work: Structured Review Approach: Unlike earlier studies that focused on specific techniques or single tasks, this paper takes a broader and more organized look at the topic. For example, while studies like Lopez et al.&nbsp;compared ML classification methods, this one goes deeper, looking at the types of information used for encoding, like metamodel and ontological semantics.</p>
+<p>Task-Driven Insights: Instead of just looking at encoding methods on their own, this paper shows how they’re connected to specific ML tasks, like model completion or classification. This makes the findings more useful and easier to apply.</p>
+<p>References to Influential Work: To bolster their findings, the authors cite a number of significant studies in the fields of machine learning (ML) and conceptual modeling (CM). These consist of: The methodology of Kitchenham and Charters’ investigation was greatly influenced by the systematic literature review criteria. The foundation for comprehending the use of ML classification algorithms to CM was established by Lopez et al.’s study. Many of the encoding techniques examined in this study have technical roots in early research on TF-IDF, word embeddings, and graph neural networks.</p>
+<p>Relevance to Capstone Project: The content of the study provides insights into how conceptual models may be encoded to enhance ML applications, which is highly beneficial to our capstone thesis on machine learning and predictive analytics. The link is as follows: If your project involves historical data in organized formats (such databases or models), the study’s description of structural and semantic encodings, including raw graphs and TF-IDF, may help you prepare data for machine learning models. Task-specific modeling, which entails matching encoding techniques to specific tasks like classification or prediction, is the main emphasis of the study. With the help of this strategy, (Ali, Gavric, Proper, &amp; Bork, 2023) you may decide how to arrange your data and select encoding methods that will help you achieve your anticipated goals. Leveraging Semantics: To increase model accuracy and interpretability, you may want to investigate the usage of semantic encodings, like word embeddings, if your data contains descriptive elements (such as natural language labels or metadata). Opportunities and Gaps: The study identifies some gaps, such as the underutilization of ontological semantics, which may encourage you to look into novel approaches of incorporating domain information into your prediction models.</p>
+<p>References Ali, S. J., Gavric, A., Proper, H., &amp; Bork, D. (2023, October). Encoding Conceptual Models for Machine Learning: A Systematic Review. In 2023 ACM/IEEE International Conference on Model Driven Engineering Languages and Systems Companion (MODELS-C) (pp.&nbsp;562-570). IEEE.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
