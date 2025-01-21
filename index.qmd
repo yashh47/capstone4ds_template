@@ -1,6 +1,5 @@
 ---
 title: "Capstone Project"
-date: '`r Sys.Date()`'
 format:
   html:
     code-fold: true
