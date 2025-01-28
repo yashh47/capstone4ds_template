@@ -1,138 +1,256 @@
 ---
-title: "Capstone Project"
-format:
-  html:
-    code-fold: true
-bibliography: references.bib # file contains bibtex for references
-#always_allow_html: true # this allows to get PDF with HTML features
-self-contained: true
-execute: 
-  warning: false
-  message: false
-editor: 
-  markdown: 
-    wrap: 72
+title: "IDC6940_week3"
+author: "Yashwanth Krishna Mothukuri"
+format: html
 ---
 
-## Literature Review 
-Background/Motivation
+## Background/Motivation
 
-Context in Which the Research Was Conducted:
-The use of machine learning (ML) to conceptual modeling (CM), a critical component of software and systems engineering, is the main emphasis of this work. 
-Conceptual models are used to graphically depict domain-specific knowledge, such as system designs or business procedures. Combining ML and CM, or ML4CM, 
-(Ali, Gavric, Proper, & Bork, 2023) has garnered attention recently as a way to automate processes such as finishing incomplete models, classifying them, or converting them into different formats. 
-We must express these models' structure (the relationships between elements) and meaning (the semantics) in a fashion that machine learning algorithms can 
-understand 
-if we want ML to function effectively with them.
+#### Context of the text:
 
-Problem or Gap in the Existing Literature:
-The lack of a standard method for encoding conceptual models for machine learning tasks is a significant issue. The majority of current research employs techniques that 
-are limited to addressing a single issue, making them challenging to generalize to other contexts. Structural encodings, which take into consideration the linkages and 
-connections in models, are frequently disregarded in favor of semantic encodings, such as the usage of text labels. Furthermore, not many methods include data from 
-ontologies or metamodels, which could offer more context and more accurately depict the connections between model components. These shortcomings hinder machine learning's 
-ability to properly utilize conceptual models for increasingly intricate and varied tasks.
+Research studies predictive process analytics by examining how machine learning predicts future business process states through determining ongoing process instance outcomes. The increased precision of XGBoost alongside other advanced machine learning techniques introduces interpretability challenges to processing models which become "black box" structures. Buildings models as transparent systems through Explainable Artificial Intelligence (XAI) methods becomes essential due to black box conditions in these predictive systems. XAI methods including LIME and SHAP help interpret black-box model predictions in the area of predictive process analytics through this study.
 
-Significance of the Research Question
-Improving ML’s Ability to Learn from Models:
-The amount of valuable information available to machine learning algorithms during training depends on how conceptual models are encoded. ML finds it difficult to 
-identify patterns or provide precise predictions in the absence of rich and meaningful encodings. The goal of this project is to enhance the way machine learning (ML) 
-works with conceptual models by examining various encoding techniques, which will increase the efficiency of tasks like transformation and classification (Ali, Gavric, Proper, & Bork, 2023).
-Providing Practical Guidance:
-The purpose of this study is to assist developers and researchers in determining which encoding techniques are most effective for various ML tasks in CM. The field 
-will 
-advance more quickly as a result of this clarity, which will make it simpler for others to create and use superior solutions.
+#### Problem or Gap in the Existing Literature:
 
-Meeting Industry Needs:
-Automating processes like model transformation and classification is becoming more and more crucial as model-driven engineering is used in more sectors. Businesses can 
-save time, cut down on errors, and enhance the overall quality of their systems by encoding conceptual models in a methodical manner.
+Earlier research has employed generic XAI methods including LIME and SHAP in predictive process analytics but it lacks comprehensive quality evaluation of explanations. XAI assessment methods exhibit limited universality since they work exclusively for specific methods or one of three data types: text or images or tabular data. The analysis of tabular data from event logs which forms standard input for process analytics reveals a major deficiency in the system. The evaluation approaches for determining model fidelity through understanding how explanations match decision-making systems and stability through explaining similar inputs face three significant challenges because the applied methods often vary between specific models and fail to work with process-based data.
 
-Summary of Methods Used
+#### Significance of the Research Question:
 
-In order to investigate how conceptual models are encoded for machine learning (ML) applications, the authors carried out a Systematic Literature Review (SLR). Several crucial steps were engaged 
-in their process:
+Predictive process analytics depends on explainable reasoning knowledge to improve user trust together with interface accessibility. This investigation has closed the evaluation gap by developing metrics to assess XAI methods when focusing on process prediction functionality. The measurement of stability and fidelity represents essential criteria to determine reliable explainable methods particularly in settings where process-based decisions generate meaningful real-world effects. This research delivers usable observations about improving decision-making systems while advancing business applications of interpretable machine learning method.
 
-Establishing the Research Focus: The study sought to investigate:
+## Methods Used:
 
-the kinds of data from conceptual models that are utilized in machine learning training.
-strategies for encoding this data.
-How encodings fit into particular modeling languages and machine learning tasks.
-the connection between encodings and machine learning models.
+#### Summary of the methodologies employed by the authors
 
-Search and Selection:
-A comprehensive search using a predefined query initially identified 647 papers. After applying rigorous selection criteria—such as excluding studies not focused on 
-encoding conceptual models for machine learning—37 papers were ultimately selected.
-Categorization and Analysis:
-Every chosen paper was categorized according to:
-1) The kind of data that is encoded (structural or semantic, for example).
-2) Encoding methods such as graph kernels, TF-IDF, and bare graphs.
-3) The ML application's goal (e.g., transformation, categorization, or completion).
-4) The kind of machine learning models used.
-Data Review:
-The study explored how different machine learning tasks are handled by comparing explicit and implicit encoding techniques. It also examined the connections between 
-machine learning models, their goals, and the methods used for encoding, shedding light on how these components interact in practice.
+Author Velmurugan et al explore explainable methods for predictive process analytics through functionally-grounded evaluation metrics in their paper. The methodologies employed are as follows: Explainability Metrics: The authors propose two key metrics for evaluating the quality of explanations: Stability: Total consistency across recurring or equivalent input cases is what stability evaluates. Fidelity: This evaluation method determines how accurately an explanation shows the underlying decision path performed by black-box models.
 
-Suitability of the Methods:
-The authors’ decision to use a systematic literature review (SLR) was a perfect match for their research goals. This method allowed them to dive deeply into existing studies,
-uncover trends, organize methods, and identify gaps in how machine learning is applied to conceptual modeling. The step-by-step approach ensured their findings were thorough and dependable.
+##### Evaluation Design:
 
-What stood out most about their approach was:
+Three open-source real-world event log datasets served as the foundation for evaluation purposes. Each process instance received multiple explanations to enable researchers to measure both stability and fidelity.
 
-Capturing diversity: They examined a wide range of encoding methods, from straightforward metrics to complex graph-based representations.
-Task-specific insights: By connecting encoding techniques to specific machine learning tasks, the study offered valuable, practical guidance for future research and applications.
+##### Machine Learning Models:
 
-Noteworthy Contributions and Innovations:
-The study made several important contributions to the field. One of the key achievements was creating a simple and clear system to classify encoding methods and their use cases. 
-This framework helps bring order and understanding to what can be a very complicated area of research (Ali, Gavric, Proper, & Bork, 2023).
-The authors also focused on practical applications by showing how specific encoding methods work well for certain machine learning tasks. For example, they explained how raw graphs are a 
-good fit for graph neural networks in tasks like model completion. This makes their findings useful and directly applicable to real-world problems.
-Another highlight was their focus on areas that are often overlooked. They pointed out that concepts like metamodels and ontological semantics are rarely used in current approaches. By bringing 
-attention to this, the study encourages future research to explore these ideas and improve how models are encoded.
-Lastly, the study identified several gaps in the field, such as the lack of standardized datasets and the limited use of advanced methods like graph kernels. These insights provide a clear direction 
-for future studies to address these challenges and move the field forward.
+Researchers used XGBoost as an algorithm to build predictive models because of its high prediction accuracy in process outcome analysis. The models received various combinations of data encoding techniques between aggregate and index-based joined by prefix-length bucketing and no bucketing approaches.
 
-Significance of the Work
-Key Findings and Contributions:
-The study breaks down different ways of encoding conceptual models into simple categories. It looks at semantic methods like TF-IDF and word embeddings and structural ones like raw graphs.  
+##### Explanation Techniques:
 
-One key takeaway is that the type of encoding you use really depends on the task. For instance, raw graphs work well with graph neural networks for things like model completion. It shows how important it is to match the method to the job.  
+Predictions were interpreted by implementing two widely used explainable AI techniques: LIME (Local Interpretable Model-Agnostic Explanations) and SHAP (SHapley Additive exPlanations).
 
-The research also points out some gaps, like not having enough standardized datasets to compare results or fully exploring metamodel and ontological semantics. These are exciting areas where future research can make a big impact.  
+##### Quantitative Measures:
 
-Lastly, the authors put together a practical framework that connects encoding methods to specific ML tasks. It’s a handy guide for anyone working in this area to pick the right approach for what they’re trying to do.
+Stability was evaluated using two measures: Stability by Subset (ϕ(Z)ϕ(Z)): A mathematical formula deploys sample variance to measure how closely related different feature subsets remain between explanations. Stability by Weight (ϕ(W)ϕ(W)): Using relative variance it measures how consistent feature importance weights remain throughout interpretation explanations. The interpretation fidelity measurement utilized Mean Absolute Percentage Error (MAPE) to determine the accuracy of the interpreter against the black-box system's operational process.
 
-Importance in the Field:
-This study addresses a crucial gap in understanding how machine learning can be applied to conceptual modeling. By organizing and clarifying different encoding approaches, it lays the groundwork for creating more effective and tailored ML solutions that fit specific tasks.
+#### Suitability of Methods to Address Research Questions:
 
-Implications for Future Research and Practice:     
+The proposed methods are well-suited to address the research question of assessing the trustworthiness of explainable AI methods in predictive process analytics:
 
-Shared Datasets: Creating shared datasets for machine learning in conceptual modeling would make it easier for researchers to compare results and reproduce studies.  
-More Context in Encodings: Using metamodel and ontological semantics could make encodings more detailed and meaningful.  
-New Applications: The study’s insights could lead to new uses for machine learning in conceptual modeling, like building better tools to check or fix models.
+##### Functionally-Grounded Metrics:
 
-Connection to Other Work:
-This paper is part of the growing research on how machine learning (ML) and conceptual modeling (CM) come together. It builds on earlier work by breaking down encoding methods and showing how they’re used in different ML tasks—a level of detail that hasn’t really been done in a systematic way before.
+The evaluation uses stability and fidelity assessment methods which eliminate user-based tests for an objective framework resulting in precise reproducible results.
 
-Building on Previous Work:
-Structured Review Approach: Unlike earlier studies that focused on specific techniques or single tasks, this paper takes a broader and more organized look at 
-the topic. For example, while studies like Lopez et al. compared ML classification methods, this one goes deeper, looking at the types of information used for encoding, like metamodel and ontological semantics.  
+##### Use of XGBoost:
 
-Task-Driven Insights: Instead of just looking at encoding methods on their own, this paper shows how they’re connected to specific ML tasks, like model completion or classification. This makes the findings more useful and easier to apply.  
+The effectiveness of explainable methods can be effectively tested using XGBoost which demonstrates high accuracy in predictive assignments.
 
-References to Influential Work:
-To bolster their findings, the authors cite a number of significant studies in the fields of machine learning (ML) and conceptual modeling (CM). 
-These consist of: 
-The methodology of Kitchenham and Charters' investigation was greatly influenced by the systematic literature review criteria. 
-The foundation for comprehending the use of ML classification algorithms to CM was established by Lopez et al.'s study. 
-Many of the encoding techniques examined in this study have technical roots in early research on TF-IDF, word embeddings, and graph neural networks. 
+##### Real-World Datasets:
 
-Relevance to Capstone Project:
-The content of the study provides insights into how conceptual models may be encoded to enhance ML applications, which is highly beneficial to our capstone thesis on machine learning and predictive analytics. The link is as follows: 
-If your project involves historical data in organized formats (such databases or models), the study's description of structural and semantic encodings, including raw graphs and TF-IDF, may help you prepare data for machine learning models. 
-Task-specific modeling, which entails matching encoding techniques to specific tasks like classification or prediction, is the main emphasis of the study. With the help of this strategy, (Ali, Gavric, Proper, & Bork, 2023) you may decide how to arrange your data and select encoding methods that will help you achieve your anticipated goals.
-Leveraging Semantics: To increase model accuracy and interpretability, you may want to investigate the usage of semantic encodings, like word embeddings, if your data contains descriptive elements (such as natural language labels or metadata).
-Opportunities and Gaps: The study identifies some gaps, such as the underutilization of ontological semantics, which may encourage you to look into novel approaches of incorporating domain information into your prediction models.
+The analysis of real-world event logs enables researchers to establish findings which translate effectively to business process operations.
 
+#### Noteworthy Innovative Approaches
 
-## References
+##### Functionally-Grounded Evaluation Metrics:
 
-Ali, S. J., Gavric, A., Proper, H., & Bork, D. (2023, October). Encoding Conceptual Models for Machine Learning: A Systematic Review. In 2023 ACM/IEEE International Conference on Model Driven Engineering Languages and Systems Companion (MODELS-C) (pp. 562-570). IEEE.
+This paper develops specific evaluation metrics for event log datasets to overcome the deficiencies of standard XAI assessment tools which were created for texts and images.
+
+##### Stability Metrics:
+
+• Stability by Subset $\phi(Z)$ measures similarity in feature subsets across explanations using the following formula: $$\phi(Z)={1-1/d} \sum^d_{i=1} s^{2}_{f_i}/ k.d(1-k/d)$$
+
+1.  • where d is the number of features, $s^2_{f_i}$ is sample variance, and k is the average number of selected features. • Stability by Weight $\phi(W)$ measures consistency in feature weights: $$ \phi(W)={1-1/d} \sum^d_{i=1} \sigma^{2}{w_i}/ |\mu{w_i}|$$ where $\sigma^2_{w_i}$ is variance and $\mu_{w_i}$ is mean weight for feature ii.
+
+2.  Fidelity Metric: • Internal fidelity is quantified using MAPE:$$ F=1/|X'| \sum_{x'\epsilon X'} |Y(x)-Y(x')|/Y(x) $$ where Y(x)and Y(x′) are prediction probabilities for original and perturbed inputs, respectively.
+
+3.  Combination of Encoding and Bucketing Methods: • The use of aggregate encoding with prefix-length bucketing or no bucketing provides insights into how data preprocessing impacts explainability.
+
+#### Key Findings and Contributions
+
+##### 1. Novel Evaluation Framework
+
+A functionally-grounded evaluation system receives special endorsement from the authors to assess explainable methods in predictive process analytics. Existing research lacked evaluation methods which specifically supported assessable explainable methods across different prediction problems according to this proposed framework.
+
+##### 2.Stability Metrics
+
+Two stability metrics were introduced:
+
+a)  Stability by Subset (φ(Z)): $$\phi(Z)={1-1/d} \sum^d_{i=1} s^{2}_{f_i}/ k.d(1-k/d)$$ This metric measures the consistency of feature subsets across explanations.
+b)  Stability by Weight (φ(W)): $$ \phi(W)={1-1/d} \sum^d_{i=1} \sigma^{2}{w_i}/ |\mu{w_i}|$$ This metric assesses the stability of feature importance weights.
+
+<!-- -->
+
+##### 3.Internal Fidelity Metric
+
+The authors propose a fidelity measure (F) based on Mean Absolute Percentage Error: $$ F=1/|X'| \sum_{x'\epsilon X'} |Y(x)-Y(x')|/Y(x) $$
+
+This metric quantifies how faithfully the explanation reflects the black-box model's decision-making process.
+
+##### 4. Comprehensive Evaluation:
+
+The researchers examine LIME and SHAP as popular explainable AI techniques for their interpretation of XGBoost models that predict process outcomes. Three actual event log datasets served as research platforms to assess these methods in real-world execution settings.
+
+##### 5. Data Encoding and Bucketing Analysis:
+
+Researchers examine how various data encoding methods (aggregate and index-based) alongside bucketing techniques (prefix-length bucketing and no bucketing) affect explanation quality.
+
+#### Significance in the Broader Context
+
+##### Addressing the Transparency Gap
+
+Due to increasing reliance on complex machine learning models in predictive process analytics the landscape demands stronger transparency and interpretability features. The study specifically aims to solve this problem by offering an assessment framework for clarifying techniques which promotes both AI-driven process analytics transparency and trustworthiness.
+
+##### Standardization of Evaluation
+
+The research introduces performance metrics that depend on functional quality to standardize explainable method assessments in process analytics. Standardization provides essential tools for field advancement through method comparison.
+
+##### Bridging Theory and Practice
+
+Real-world dataset analysis integrations with XGBoost machine learning techniques drive forces between theoretical explainable AI learning and actual process analytics implementations. The applied methods deliver instant results that benefit starkly practical implementation across industry. Foundation for User-Oriented Evaluation
+
+The research creates essential foundational work which will enable upcoming human user evaluations. Effective user studies depend on comprehensive comprehension of technical explanation quality.
+
+##### Guidance for Practitioners
+
+This research evaluates how two common explainable methods (LIME and SHAP) perform when used in process analytics applications. The identified guidelines offer crucial help to practitioners who select methodologies based on their individual requirements.
+
+##### Data Preprocessing Insights
+
+Data preprocessing insights become clearer through the examination of various bucketing and encoding methods which affects explainability outputs. Designing predictive process analytics systems requires effective preprocessing decisions which directly influence both explanation quality and interpretability.
+
+##### Extensibility and Future Research
+
+Two key extension capabilities of the designed metrics and evaluation framework enable their application to new explainable methods that arise during predictive process analytics research. The research will maintain its value because this proactive outlook means it stays aligned with current needs.
+
+##### Interdisciplinary Impact
+
+This research adds value to explainable artificial intelligence by showing how specific process analytics parameters can enhance XAI evaluation frameworks. This method sets an example which might inspire parallel domain-based evaluation techniques across various fields.
+
+#### Implications of the findings for future research or practice:
+
+##### Standardization of Evaluation Metrics
+
+The proposed functionally-grounded metrics for stability and fidelity provide a foundation for standardizing the evaluation of explainable methods in process analytics. These metrics include: Stability by Subset, Stability by Weight, Internal Fidelity
+
+The newly developed metrics facilitate better evaluation of explainable approaches leading to faster field advancement.
+
+Data Preprocessing Considerations
+
+Tests show that how data encoding and bucketing practices function impacts explanation quality. The study explored three combinations:
+
+| Encoding Method | Bucketing Method |
+|-----------------|------------------|
+| Aggregate       | Prefix-length    |
+| Index-based     | Prefix-length    |
+| Aggregate       | No bucketing     |
+
+Proper preprocessing within predictive process analytics pipelines requires immediate attention because of the discovered inconsistencies. Research on the discovery of optimal preprocessing techniques for varying process types and predictive challenges should be a focus for upcoming studies.
+
+##### Expanding Evaluation Frameworks
+
+While this study focuses on stability and fidelity, future research could expand the evaluation framework to include other dimensions such as Comprehensibility, Action ability, Computational efficiency
+
+Future research using this functionally-grounded approach should conduct assessments with end-users to evaluate explanation capabilities in real-world practical usage.
+
+##### Integration with Process Mining
+
+The investigation of future research should study methods through which explainable predictive analytics can combine with process discovery techniques to deliver complete business process insights. The merger between explainable predictive models and process mining techniques has the potential to create an integrated approach to analysis and process transformation.
+
+##### Ethical and Responsible AI
+
+The evaluation framework shows promise for adding fairness analysis alongside bias detection for process predictions and explanations while establishing responsible AI standards for process management. The increasing regulatory focus on AI explainability demands a foundation which will enable the development of dedicated compliance frames for predictive process analytics.
+
+This research simultaneously pushes forward existing explainable predictive process analytical methods while establishing multiple future research possibilities and practical usage avenues. Researchers together with practitioners must focus on these regions to develop trustworthy along with transparent AI-driven process analytics solutions which provide effective results.
+
+#### Connection to Other Work
+
+This paper by Velmurugan et al. builds on and extends previous work in explainable AI and predictive process analytics in several key ways:
+
+##### Extension of XAI Evaluation to Process Analytics
+
+The authors applied existing evaluation frameworks for XAI to predictive process analytics while making adjustable modifications to better fit this domain. Building from Doshi-Velez and Kim's (2017) three-level evaluation framework they concentrate their analysis on functionally-grounded evaluation practices. The authors extend existing XAI evaluation practices through applying their principles to specific process data requirements.
+
+Novel Stability Metrics
+
+The paper introduces two stability metrics adapted for process analytics:
+
+Stability by Subset (φ(Z)): The metric utilizes modifications made to Nogueira et al. (2018) feature selection stability framework which operates within explainable process analytics boundaries.
+
+Stability by Weight (φ(W)): The newly developed metric calculates feature weight stability through relative variance analysis.
+
+These metrics extend existing stability measurements from XAI fields by specifically supporting tabular structures and time-related characteristics of process data.
+
+##### Internal Fidelity Metric
+
+The authors introduce an internal fidelity assessment that uses Mean Absolute Percentage Error (MAPE) as its foundation. This differs from previous approaches like:
+
+Researchers used white-box models according to Ribeiro et al. (2016) to measure fidelity.
+
+The researchers Alvarez-Melis and Jaakkola (2018) removed features through an ablation technique to evaluate system fidelity.
+
+The newly designed computational method specializes in analyzing process analytics data while fixing the shortcomings of present measurement techniques that target images and text.
+
+##### Comprehensive Evaluation Framework
+
+The authors introduce a united stability-fidelity framework through their work which delivers stronger evaluation capabilities than research on explainable process analytics from Galanti et al. (2020) and Rehse et al. (2019), that solely engaged in XAI method usage without extensive evaluation.
+
+##### Integration with State-of-the-Art Process Prediction
+
+The research expands upon research by Teinemaa et al. (2019) which validated XGBoost as an optimal algorithm for predicting outcomes by assessing LIME and SHAP explanations for XGBoost models.
+
+##### Data Encoding and Bucketing Analysis
+
+This analysis investigates the effect of diverse encoding and bucketing approaches on explainability quality based on the work performed by Teinemaa et al. (2019) regarding prediction accuracy enhancements from these techniques.
+
+##### Key seminal works cited include:
+
+Doshi-Velez and Kim (2017) on XAI evaluation frameworks
+
+Ribeiro et al. (2016) introducing LIME
+
+Lundberg and Lee (2017) introducing SHAP
+
+#### Relevance to Capstone Project:
+
+Focus on Predictive Analytics: Historical data predictive modeling fits the paper's predictive process analytics focus that mirrors ability to make predictions from historical information.
+
+Use of Advanced Machine Learning: XGBoost serves as the primary tool for model building within this study that directly benefits project's machine learning element.
+
+Evaluation of Explainable AI Methods: A comparative analysis of the explainable AI techniques LIME and SHAP takes place within this study. Including explainable aspects in predictive models can result in major improvements for their overall reliability and worth.
+
+##### Specific Methods and Theories to Incorporate:
+
+Evaluation Metrics: The paper proposes functionally-grounded evaluation metrics for assessing explainable methods:
+
+Stability by Subset Stability by Weight Internal Fidelity
+
+Data Preprocessing Techniques: The paper presents several data encoding and bucketing approaches suitable for preparing historic data.
+
+Aggregate encoding with prefix-length bucketing, Index-based encoding with prefix-length bucketing, Aggregate encoding with no bucketing
+
+Use of Real-World Datasets: The research points to three open-source and real-event systems documenting all workforce activities. The use of multiple sources in authentic datasets works ideally with your historical data analytic requirements.
+
+Potential Areas for Expansion or Divergence:
+
+Domain-Specific Adaptations: Although a process analytics approach guides the research your team could make targeted adjustments to apply their techniques to historical data analysis.
+
+Additional ML Algorithms: The paper primarily uses XGBoost. The study could benefit from extension by performing a comparison between different predictive machine learning algorithms as part of its methodology.
+
+Human-Grounded Evaluation: Evaluation takes place through applying functional criteria in this paper. Your project may add human-grounded assessment techniques to evaluate how practical the explanations from your models prove in actual applications.
+
+Temporal Aspects: Your predictive models require stronger focus on temporal dimensions throughout the dataset which can lead to developing innovative features and time-based analysis approaches.
+
+### Refrences
+
+M. Velmurugan, C. Ouyang, C. Moreira, and R. Sindhgatta, "Evaluating explainable methods for predictive process analytics: A functionally-grounded approach," arXiv preprint arXiv:2012.04218, 2020.
+
+F. Doshi-Velez and B. Kim, "Towards a rigorous science of interpretable machine learning," arXiv preprint arXiv:1702.08608, 2017.
+
+D. Alvarez-Melis and T. S. Jaakkola, "On the robustness of interpretability methods," arXiv preprint arXiv:1806.08049, 2018.
