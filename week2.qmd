@@ -59,22 +59,22 @@ Importance in the Field: This study addresses a crucial gap in understanding how
 
 ##### Implications for Future Research and Practice:
 
-##### Shared Datasets: 
+##### Shared Datasets:
 
 Creating shared datasets for machine learning in conceptual modeling would make it easier for researchers to compare results and reproduce studies.\
 More Context in Encodings: Using metamodel and ontological semantics could make encodings more detailed and meaningful.
 
-#####  New Applications: 
+##### New Applications:
 
 The study’s insights could lead to new uses for machine learning in conceptual modeling, like building better tools to check or fix models.
 
-##### Connection to Other Work: 
+##### Connection to Other Work:
 
 This paper is part of the growing research on how machine learning (ML) and conceptual modeling (CM) come together. It builds on earlier work by breaking down encoding methods and showing how they’re used in different ML tasks—a level of detail that hasn’t really been done in a systematic way before.
 
-#### Building on Previous Work: 
+#### Building on Previous Work:
 
-##### Structured Review Approach: 
+##### Structured Review Approach:
 
 Unlike earlier studies that focused on specific techniques or single tasks, this paper takes a broader and more organized look at the topic. For example, while studies like Lopez et al. compared ML classification methods, this one goes deeper, looking at the types of information used for encoding, like metamodel and ontological semantics.
 
@@ -82,10 +82,10 @@ Task-Driven Insights: Instead of just looking at encoding methods on their own, 
 
 References to Influential Work: To bolster their findings, the authors cite a number of significant studies in the fields of machine learning (ML) and conceptual modeling (CM). These consist of: The methodology of Kitchenham and Charters' investigation was greatly influenced by the systematic literature review criteria. The foundation for comprehending the use of ML classification algorithms to CM was established by Lopez et al.'s study. Many of the encoding techniques examined in this study have technical roots in early research on TF-IDF, word embeddings, and graph neural networks.
 
-#### Relevance to Capstone Project: 
+#### Relevance to Capstone Project:
 
 The content of the study provides insights into how conceptual models may be encoded to enhance ML applications, which is highly beneficial to our capstone thesis on machine learning and predictive analytics. The link is as follows: If your project involves historical data in organized formats (such databases or models), the study's description of structural and semantic encodings, including raw graphs and TF-IDF, may help you prepare data for machine learning models. Task-specific modeling, which entails matching encoding techniques to specific tasks like classification or prediction, is the main emphasis of the study. With the help of this strategy, (Ali, Gavric, Proper, & Bork, 2023) you may decide how to arrange your data and select encoding methods that will help you achieve your anticipated goals. Leveraging Semantics: To increase model accuracy and interpretability, you may want to investigate the usage of semantic encodings, like word embeddings, if your data contains descriptive elements (such as natural language labels or metadata). Opportunities and Gaps: The study identifies some gaps, such as the underutilization of ontological semantics, which may encourage you to look into novel approaches of incorporating domain information into your prediction models.
 
-##### References  
+##### References
 
 Ali, S. J., Gavric, A., Proper, H., & Bork, D. (2023, October). Encoding Conceptual Models for Machine Learning: A Systematic Review. In 2023 ACM/IEEE International Conference on Model Driven Engineering Languages and Systems Companion (MODELS-C) (pp. 562-570). IEEE.
