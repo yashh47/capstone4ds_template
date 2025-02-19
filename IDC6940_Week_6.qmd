@@ -1,0 +1,106 @@
+---
+title: "IDC694_Week_6"
+author: "Yashwanth Krishna Mothukuri"
+format: html
+editor: visual
+---
+
+## Introduction
+
+### Problem definition
+
+In this study, we apply SVM to the Iris dataset, a well-known dataset in statistical pattern recognition, to classify iris flowers into three species: Setosa, Versicolor, and Virginica based on four features—sepal length, sepal width, petal length, and petal width. Our main challenge lies in designing a highly effective SVM-based multi-class classification system which can correctly identify flower species through provided feature data.
+
+Application of SVM demonstrates significant value within biological classification and medical diagnosis and image recognition fields because the technique successfully employs strong mathematical foundations with effective performance using datasets of small to medium sizes (Vapnik, 1995).
+
+here ( y_i \in {+1, -1} ).
+
+Mathematically represented as :
+
+$D=${$(x_i, y_i)$}$^n_{i=1}$
+
+where: - $x_i \epsilon R^4$ represents the feature vector (sepal length, sepal width, petal length, petal width) - $y_i \epsilon${1,2,3} represents the class label (species)
+
+The task requires developing a function $f : R^4 ->${1,2,3} to predict which species belongs to each set of input features accurately. The species categorization problem stands out due to its importance as a basic example of machine learning methods which enable solutions of practical classification problems involving species identification and medical diagnosis along with image recognition tasks.
+
+### Context and background
+
+One of the most popular statistical datasets known as the Iris was first published by Ronald Fisher in 1936. Researchers use this dataset to evaluate classification algorithms because it features basic structures accompanied by simple characteristics. There are 150 observations split into 50 samples each of the three iris species within the dataset. Due to its use of four continuously valued features each dataset observation makes it an optimal choice to study supervised learning approaches.
+
+Statistics determines how features are distributed and how they relate to each other in this problem. EDA techniques detect that Setosa flowers form a linearly distinct group compared to the other species while Versicolor and Virginica have overlapping distributions. The situation features multiple interactions between data classes which establishes its worth as a study case for sophisticated classification methods.
+
+The Support Vector Machine (SVM) algorithm created by Cortes and Vapnik (1995) represents a strong approach to solve such classification issues. The Support Vector Machine algorithm finds the best possible hyperplane through mathematical calculation $w⋅x+b=0$ The goal of SVM is to identify a $w⋅x+b=$ hyperplane which yields the greatest gap between the categorically distinct sets. Using kernel functions including linear, polynomial or radial basis functions SVM moves point sets which are not separable in their original space into higher-dimensional areas for proper separation. The optimization problem presents itself as the following mathematical formulation:
+
+-   The simplest form of kernal is defined as:
+
+##### Linear: $$
+    K(x_i, x_j) = x_i \cdot x_j
+    $$ Where:
+
+-   $x_i$ and $x_j$ are future vectors
+
+##### Polynomial Kernal:
+
+$$
+K(x_i, x_j) = (x_i \cdot x_j + c)^d
+$$
+
+where:
+
+-   $c$ is a constant (controls influence of higher-order terms), - $d$ is the polynomial degree.
+
+##### Radial basis:
+
+$$
+K(x_i, x_j) = \exp(-\gamma ||x_i - x_j||^2)
+$$
+
+where:
+
+-   $\gamma$ is a hyperparameter that controls the influence of individual training samples
+
+### Objectives and goals
+
+The main goal of this work involves creating an svm-based predictive system which effectively categorizes iris flowers through their measured sepal and petal features. These are the precise objectives to achieve:
+
+##### Data Exploration:
+
+A preliminary analysis through exploratory data analysis (EDA) allows investigation of feature distribution patterns together with their mutual connections. The data visualization process involves creating scatterplots with simultaneous display of boxplots and pair plots.
+
+##### Model Development:
+
+R programming language will host the SVM model implementation through selection of radial basis function as kernel because of possible non-linear data relationships.
+
+[![SVC with Kernal](images/download (1).jpeg)](https://scikit-learn.org/stable/_images/sphx_glr_plot_iris_svc_001.png)
+
+##### Model Evaluation:
+
+Evaluation of the model will require assessing performance metrics which include accuracy alongside precision, recall and F1-score. The classification results will be shown through a confusion matrix to demonstrate performance.
+
+##### Analysis:
+
+Analysis of the results provides understanding about the model's automatic decision system. The analysis of support vectors alongside decision boundaries will explain how the model recognizes different species.
+
+### Summary of Approach
+
+The following method will be used to achieve the objectives:
+
+##### Data Acquisition
+
+The Iris dataset will be obtained through R's datasets package since this package contains a well-organized dataset for analysis.
+
+##### Data Preprocessing:
+
+The dataset will be partitioned for preprocessing by using an 80-20 training to testing split method. The evaluation on unseen data ensures a reliable performance assessment through validation of the model.
+
+##### Modeling:
+
+An SVM model will be built using the $e1071$ package found in R. A radial basis function (RBF) kernel serves as the selected method for detecting nonlinear data patterns. Hyperparameters such as the cost parameter \$ C \$ The model will reach its optimal performance by adjusting both the $C$ value along with the gamma parameter.
+
+##### Evaluation:
+
+The model evaluation process will be conducted through the assessment of confusion matrix alongside classification metrics. Decision boundary visualizations will help explain the research outcomes because they are one of the provided visualization methods.
+
+##### Software and Tools:
+
+A combination of R and $caret$ for data splitting with $ggplot2$ for visualization will serve as the software and tools to execute this analysis.
