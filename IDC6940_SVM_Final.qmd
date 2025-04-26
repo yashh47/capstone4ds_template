@@ -1,0 +1,451 @@
+---
+title: "IDC6940_FinalProject"
+author: "Yashwanth Krishna Mothukuri"
+format: html
+editor: visual
+---
+
+## Introduction
+
+### Problem definition
+
+In this study, we apply SVM to the Iris dataset, a well-known dataset in statistical pattern recognition, to classify iris flowers into three species: Setosa, Versicolor, and Virginica based on four features—sepal length, sepal width, petal length, and petal width. Our main challenge lies in designing a highly effective SVM-based multi-class classification system which can correctly identify flower species through provided feature data.
+
+[![Flower Species](images/multiclass_logistic_regression.jpg){fig-alt="This picture describes the sepal length, petal length of virginica,setosa,versicolor  respectively" fig-align="center"}](https://savioglobal.com/wp-content/uploads/2023/02/multiclass_logistic_regression.jpg)
+
+Application of SVM demonstrates significant value within biological classification and medical diagnosis and image recognition fields because the technique successfully employs strong mathematical foundations with effective performance using datasets of small to medium sizes (Vapnik, 1995).
+
+Mathematically represented as :
+
+$D=${$(x_i, y_i)$}$^n_{i=1}$
+
+where: - $x_i \epsilon R^4$ represents the feature vector (sepal length, sepal width, petal length, petal width) - $y_i \epsilon${1,2,3} represents the class label (species)
+
+The task requires developing a function $f : R^4 ->${1,2,3} to predict which species belongs to each set of input features accurately. The species categorization problem stands out due to its importance as a basic example of machine learning methods which enable solutions of practical classification problems involving species identification and medical diagnosis along with image recognition tasks.
+
+### Context and background
+
+One of the most popular statistical datasets known as the Iris was first published by Ronald Fisher in 1936. Researchers use this dataset to evaluate classification algorithms because it features basic structures accompanied by simple characteristics. There are 150 observations split into 50 samples each of the three iris species within the dataset. Due to its use of four continuously valued features each dataset observation makes it an optimal choice to study supervised learning approaches.
+
+Statistics determines how features are distributed and how they relate to each other in this problem. EDA techniques detect that Setosa flowers form a linearly distinct group compared to the other species while Versicolor and Virginica have overlapping distributions. The situation features multiple interactions between data classes which establishes its worth as a study case for sophisticated classification methods.
+
+The Support Vector Machine (SVM) algorithm created by Cortes and Vapnik (1995) represents a strong approach to solve such classification issues. The Support Vector Machine algorithm finds the best possible hyperplane through mathematical calculation $w⋅x+b=0$ The goal of SVM is to identify a $w⋅x+b=$ hyperplane which yields the greatest gap between the categorically distinct sets. Using kernel functions including linear, polynomial or radial basis functions SVM moves point sets which are not separable in their original space into higher-dimensional areas for proper separation. The optimization problem presents itself as the following mathematical formulation:
+
+-   The simplest form of kernal is defined as:
+
+##### Linear: $$
+    K(x_i, x_j) = x_i \cdot x_j
+    $$ Where:
+
+-   $x_i$ and $x_j$ are future vectors
+
+##### Polynomial Kernal:
+
+$$
+K(x_i, x_j) = (x_i \cdot x_j + c)^d
+$$
+
+where:
+
+-   $c$ is a constant (controls influence of higher-order terms), - $d$ is the polynomial degree.
+
+##### Radial basis:
+
+$$
+K(x_i, x_j) = \exp(-\gamma ||x_i - x_j||^2)
+$$
+
+where:
+
+-   $\gamma$ is a hyperparameter that controls the influence of individual training samples
+
+### Objectives and goals
+
+The main goal of this work involves creating an svm-based predictive system which effectively categorizes iris flowers through their measured sepal and petal features. These are the precise objectives to achieve:
+
+##### Data Exploration:
+
+A preliminary analysis through exploratory data analysis (EDA) allows investigation of feature distribution patterns together with their mutual connections. The data visualization process involves creating scatterplots with simultaneous display of boxplots and pair plots.
+
+##### Model Development:
+
+R programming language will host the SVM model implementation through selection of radial basis function as kernel because of possible non-linear data relationships.
+
+##### Model Evaluation:
+
+Evaluation of the model will require assessing performance metrics which include accuracy alongside precision, recall and F1-score. The classification results will be shown through a confusion matrix to demonstrate performance.
+
+##### Analysis:
+
+Analysis of the results provides understanding about the model's automatic decision system. The analysis of support vectors alongside decision boundaries will explain how the model recognizes different species.
+
+### Summary of Approach
+
+The application of Support Vector Machines (SVM) for classification takes place through the analysis of the Iris dataset. The following sequence of steps constitutes the approach.
+
+##### Data Preprocessing & Exploration:
+
+Check the distribution of dataset features during the data loading and examination phase. The dataset requires exploratory data analysis through visualization techniques as part of data exploration.
+
+##### Support Vector Machine (SVM) Classification:
+
+SVM models with different kernel functions need to be implemented as part of this approach.
+
+-   Linear Kernel: Suitable for linearly separable data.
+-   Polynomial Kernel: Captures non-linear relationships.
+-   Radial Basis Function (RBF) Kernel: Handles complex, non-linear decision boundaries.
+
+##### Model Training & Evaluation:
+
+-   The analysis requires separation of the data into training segments that hold 70% of the records and testing segments that consist of 30%.
+
+-   Use the e1071 package in R to execute SVM model training procedures. Measuring performance requires accuracy rates alongside calculations of misclassification errors.
+
+##### Hyperparameter Tuning:
+
+Tune() function should be used to optimize cost parameter (C) and Epslon values The best model should be selected according to analysis results.
+
+## Methods:
+
+### Data acquisition and sources:
+
+#### Origin and Structure:
+
+National statistics have recognized the Iris dataset as one of their most famous multivariate collection points. The R libraries contain this dataset which serves primarily for classification purposes.
+
+British scientist Ronald Fisher published "The use of multiple measurements in taxonomic problems" through his 1936 journal article which introduced the Iris dataset. This dataset serves as one of the classic examples for statistical and machine learning demonstration purposes.
+
+The dataset contains 150 rows with five columns as variables. There are 150 observations of iris flowers containing five variables among them:
+
+1.  Length of the sepal (in cm).
+2.  Width of the sepal (in cm).
+3.  Length of the petal (in cm)
+4.  Width of the petal (in cm).
+
+Species are categorized into three variables
+
+-   setosa
+-   versicolor
+-   virginica
+
+Here sepals length, sepal width, petal length and petal width are **Numeric** While the other variable Species is a **Categorical factor**
+
+#### Preprocessing Steps:
+
+##### Data Loading and Exploration:
+
+1.  Dataset is taken from the R envirorment using **data(iris)** command
+
+2.  The str(iris) function examines the dataset structure to verify that numeric data exists in the first four fields and categorical data appears in the fifth field.
+
+3.  The numerical variables call for basic summary calculations (mean, median, min and max) to determine their data distribution patterns.
+
+4.  The pair plots implementation using the ggpairs function in R are used to understand the relationships between variables and to identify potential patterns or separability between species.
+
+##### Feature Selection and Data Spliting:
+
+Results from exploratory analysis provide basis for choosing features which will be incorporated into training models. The analysis determined that **Petal.Length** and **Petal.Width** show the strongest capability for distinguishing species from one another.
+
+For training and testing purposes the dataset should be divided into two distinct sections where 70% serves for training purposes and 30% exists for testing. The whole dataset functions as both training and evaluation data in this instance.
+
+##### Model-Specific Preprocessing:
+
+-   Normalization/Scaling: For SVM models it is standard practice to normalize numeric features because it allows various features to contribute at equal scales to the model. R contains functions which allow data normalization through **scale()**.
+-   Handling Categorical Variables: Since the fifth variable **Species** is Categorical in R it is encoded as a factor which is appropriate in classification tasks
+
+##### Model Training and Evaluation:
+
+1.  Here we use an SVM model with diffrent kernals like radial, linear, polynomial, sigmoid to train the dataset
+
+2.  Using the confusion matrix and misclassification rate we determine the model perfomance.
+
+### Mathematical or Statistical Models:
+
+The analysis implements Support Vector Machine (SVM) as the classifier for Iris dataset classification. The R program uses the e1071 package to execute the SVM model. The model functions as a classification problem because the target variable Species consists of categorical data.
+
+##### Model Selection and Justification:
+
+SVM model was selected since it demonstrates robustness for processing non-linearly separable data through its multiple kernel function capabilities. The following kernels were evaluated:
+
+-   Linear Kernel: Assumes a linear decision boundary between classes.
+
+-   polynomial kernel: It detects advanced relationships between data points yet introduces high levels of overfitting when applied with high polynomial degrees.
+
+-   Sigmoid Kernel: Performed poorly on this dataset.
+
+-   The RBF kernel: It was emerged as the selected option because it demonstrated exceptional classification separation for the three species types.
+
+##### Hyperparameter Optimization:
+
+To improve the performence of the mode, i used Grid Search method. The following factors are systematized :
+
+-   Cost **(C)** controls the relationship between achieving maximal margin performance and reducing classification errors.
+-   The epslon parameter establishes how each training example affects the boundary decision.
+-   The model values ended with 35 support vectors when C is 8 while eps had a value of 0.25.
+
+##### Performance Evaluation:
+
+The model achieved 98.67% accuracy as demonstrated by the confusion matrix yet two instances remained incorrect. The particular misclassification rates determined by different kernel methods are as as follows:
+
+-   RBF Kernel: 1.3% (best performance)
+-   Linear Kernel: 3.3%
+-   Polynomial Kernel: 4.7%
+
+Hence we are using RBF Kernel for the demonstration
+
+### Experimental design or analytical procedures:
+
+Here is the Step by step breakdown:
+
+##### Loading the Data
+
+```{r}
+#| label: Loading Libraries
+library("e1071")
+library(GGally)
+library(ggplot2)
+```
+
+```{r}
+#| label: Importing Iris data
+data("iris")
+```
+
+##### Exploring the dataset:
+
+```{r}
+str(iris)
+```
+
+```{r}
+#| label: view the data
+head(iris,5)
+```
+
+Now, to predict the species of flower we gonna use petal length, petal width, sepal length and sepal width
+
+##### Training the model
+
+```{r}
+#| label: Train the model
+svm_radial <- svm(Species ~ ., data=iris,
+                 kernel="radial")
+
+svm_linear <- svm(Species ~ ., data=iris,
+                 kernel="linear")
+
+svm_polynomial <- svm(Species ~ ., data=iris,
+                 kernel="polynomial")
+
+```
+
+Since the target variable Species is char data, default classification will be SVM. If the data is Continuous/Quantitative the default will be Regression
+
+##### Exploratory Visualization
+
+```{r}
+#| label: Exploratory Visualization
+ggpairs(iris, ggplot2::aes(colour = Species, alpha = 0.4))
+```
+
+From the above graphs we can see that Petal.width and Petal.length can be separated with \*\*high confidence\*\*
+
+However, Versicolor and Virginica Species are overlapped. If we look at the scatterplot of Sepal.Length vs Petal.Length and Petal.Width vs Petal.Length, we can distintly see a seperator that can be draw between the groups of Species.
+
+Here we can use the Petal.width and petal.length as parameters. SVM is the best model to classify further
+
+```{r}
+#| label:  Plot SVM decision boundary
+plot(svm_radial, data=iris,
+     Petal.Width~Petal.Length,
+     slice = list(Sepal.Width=3, Sepal.Length=4) 
+     )
+plot(svm_linear, data=iris,
+     Petal.Width~Petal.Length,
+     slice = list(Sepal.Width=3, Sepal.Length=4))
+plot(svm_polynomial, data=iris,
+     Petal.Width~Petal.Length,
+     slice = list(Sepal.Width=3, Sepal.Length=4) )
+```
+
+-   From the above graph Support vector is represented by cross sign
+-   Support vector and decision boundry belongs to 3 types of species
+-   Orange color represents second species(versicolor)
+-   Brown color represents Third Species(Virginica)
+
+From the 52 support vector, 8 of them are first species(cross marks), 22 are Second species and 21 are third species
+
+##### Predict each species
+
+Confusion matrix and missclasscation Error
+
+```{r}
+pred_linear = predict(svm_linear,iris)
+pred_polynomial = predict(svm_polynomial,iris)
+pred_radial = predict(svm_radial,iris)
+table_linear = table(Predicted=pred_linear, Actual = iris$Species)
+table_polynomial = table(Predicted=pred_polynomial, Actual = iris$Species)
+table_radial = table(Predicted=pred_radial, Actual = iris$Species)
+table_linear
+table_polynomial
+table_radial
+```
+
+The data contains 50 instances that belong to the first species while the model correctly identified 50 points from the same species and it also accomplished similar accuracy for second and third categories.
+
+Two data points from the virginica category received predictions as versicolor by the model model while two points from versicolor received predictions as virginica. Thus the error rate is increased due to misclassification.
+
+##### Missclassification rate:
+
+```{r}
+1-sum(diag(table_linear)/sum(table_linear))
+1-sum(diag(table_polynomial)/sum(table_polynomial))
+1-sum(diag(table_radial)/sum(table_radial))
+```
+
+-   For the Linear the Missclassification rate is 0.033 which is 3.3% higher than Radial
+-   For Polynomial, Missclassificationrate is 0.0466 which is 4.7% higher than the radial
+
+Hence its clear that the best model is Radial
+
+#### Parameter Tuning:
+
+-   epsilon ranges from 0 to 1 with 11 values (0.1,0.2,...1.0)
+
+-   cost = cost of constraint voilation
+
+-   The default cost value is 1
+
+-   If the cost is very high, this indicates a high penalty for non-separable points \[the model may store too many support vectors\], which leads to over fitting Similarly, too small a cost value will result in under fitting.
+
+```{r}
+#| label: Hyperparameter tuning using tune()
+set.seed(123)
+tmodel=tune(svm,Species~., data=iris,
+     ranges=list(epsilon= seq(0,1,0.1), cost = 2^(2:7)))
+plot(tmodel)
+```
+
+Above plot shows the performance evaluation of SVM for 2 parameters(cost and epsilon). Dark region indicates Lower missclassification range.
+
+```{r}
+summary(tmodel)
+```
+
+#### Best Model
+
+```{r}
+mymodel=tmodel$best.model
+summary(mymodel)
+```
+
+```{r}
+plot(mymodel, data=iris,
+     Petal.Width~Petal.Length,
+     slice = list(Sepal.Width=3, Sepal.Length=4)  
+)
+```
+
+Using the best Parameter here is the confusion matrix and missclassification
+
+```{r}
+pred1 = predict(mymodel,iris)
+tab1 = table(Predicted=pred1, Actual = iris$Species)
+tab1
+```
+
+from the table, out of 150, 2 are missclassified
+
+```{r}
+1-sum(diag(tab1)/sum(tab1))
+```
+
+The Rate is 1.3% which is lesser than other.
+
+### Software and tools:
+
+##### Programming Languages & Environments:
+
+-   R – Primary language for statistical computing and machine learning.
+
+##### Libraries & Packages:
+
+-   The R package e1071 enables users to execute Support Vector Machines (SVM) together with alternative machine learning methods.
+
+##### Computational Resources:
+
+-   The computing activity together with model training takes place within a single machine located on-site.
+
+### Result:
+
+The results of the Support Vector Machine (SVM) classification on the Iris dataset are presented using various visual aids and performance metrics. The confusion matrices for different kernel functions (linear, polynomial, and radial basis function (RBF)) are shown below, along with the misclassification rates.
+
+#### Confusion Matrix for Linear Kernel:
+
+| Predicted  | Setosa | Versicolor | Virginica |
+|------------|--------|------------|-----------|
+| Setosa     | 50     | 0          | 0         |
+| Versicolor | 0      | 46         | 1         |
+| Viginica   | 0      | 4          | 49        |
+
+#### Confusion Matrix for Polynomial Kernel:
+
+| Predicted  | Setosa | Versicolor | Virginica |
+|------------|--------|------------|-----------|
+| Setosa     | 50     | 0          | 0         |
+| Versicolor | 0      | 50         | 0         |
+| Virginica  | 0      | 0          | 50        |
+
+#### Confusion Matrix for RBF Kernel:
+
+| Predicted  | Setosa | Versicolor | Virginica |
+|------------|--------|------------|-----------|
+| Setosa     | 50     | 0          | 0         |
+| Versicolor | 0      | 48         | 2         |
+| Virginica  | 0      | 2          | 48        |
+
+##### Misclassification Rates:
+
+-   **Linear Kernel:** 3.3%
+
+-   **Polynomial Kernel :** 4.7%
+
+-   **RBF Kernel:** 1.3%
+
+Running the tune() function in R resulted in cost = 4 and epsilon = 0 being selected as the optimal parameters for the RBF kernel which produced a 1.3% misclassification rate.
+
+#### Interpretation of Results:
+
+-   RBF Kernel Performance The research revealed that RBF kernel achieved 98.67% accuracy along with 1.3% misclassification rate thus establishing itself as the most suitable kernel for this specific dataset. RBF kernel solved the non-linear separability problem between Versicolor and Virginica species that presented overlapping feature distributions with high accuracy (98.67%).
+
+-   Linear Kernel: The linear kernel capability reached 96.7% accuracy but its 3.3% misclassification rate showed its inability to detect non-linear relationships in the data.
+
+-   Polynomial Kernel: The polynomial kernel produced a 4.7% misclassification error on Virginica while achieving 100% accuracy for Setosa and Versicolor, although this occurred because higher polynomial degrees likely caused overfitting.
+
+#### Comparison with Expected Outcomes:
+
+##### The results aligned with expectations:
+
+-   Implementation of RBF kernel produced superior outcomes compared to linear and polynomial kernels since it specialices in complex boundary detection.
+
+-   Analysis of data distribution through EDA confirmed that Setosa was linearly separable from the other groups but Versicolor and Virginica showed no linear distinction.
+
+-   The higher error rate of the polynomial kernel became understandable because it remains vulnerable to hyperparameter selection (like the polynomial degree).
+
+#### Statistical Significance:
+
+The RBF kernel demonstrated consistent superiority through multiple tests and lower misclassification rates which together reflected robustness in this classification scenario. Statistical significant measures were not explicitly conducted.
+
+#### Limitations of the Results:
+
+-   Dataset Size: The Iris dataset contains limited information (150 samples) thus making it challenging for the model to provide accurate predictions on broader and diverse datasets.
+
+-   Feature Overlap: Advanced kernels such as RBF did not improve classification accuracy because Versicolor and Virginica features had significant distributions that overlapped.
+
+-   Hyperparameter Sensitivity: model's performance using non-linear kernels heavily depends on proper hyperparameter adjustment in SVM models. The results from grid search optimization could be improved by implementing alternative optimization techniques such as Bayesian optimization.
+
+-   Computational Resources: The analysis was conducted on a single machine, but it would not process either big datasets or complex models effectively.
+
+#### Conclusion:
+
+Based on the above analysis, it is observed that the RBF-based SVM model offered accuracy of 98.67% in classifying the species of Iris which indicates that the method is appropriate when non-linearity between the features exist. Future work can include making use of ensemble kinds of methods or improve on the current cross-validation techniques in a bid to overcome some of these challenges arising from feature correlations and other hyperparameter issues.
